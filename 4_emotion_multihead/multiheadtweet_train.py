@@ -444,3 +444,7 @@ with open('drive/My Drive/stoi0430.pkl', 'wb') as f:
 
 with open('drive/My Drive/itos0430.pkl', 'wb') as f:
     pickle.dump(list(TEXT.vocab.itos), f)
+
+#torch.tensorをnumpy配列へ変換
+x = TEXT.vocab.vectors.to('cpu').detach().numpy().copy()
+np.save('drive/My Drive/omomi0430', x)
